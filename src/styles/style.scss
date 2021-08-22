@@ -1,0 +1,160 @@
+@import 'resets';
+@import 'fonts';
+@import 'colors';
+@import 'mixins';
+
+body {
+	background: $light-gray-cyan;
+	@include flex-column-center;
+}
+
+header {
+	height: 20vh;
+	@include flex-column-center;
+	justify-content: center;
+}
+
+main {
+	min-height: 80vh;
+	width: min(100vw, 400px);
+	background: $white;
+	position: relative;
+	bottom: 0;
+	padding: 1em;
+	border-radius: 2em 2em 0 0;
+
+	@media (min-width: 800px) {
+		position: static;
+		padding: 1.5em;
+		display: flex;
+		justify-content: space-between;
+		min-height: 50vh;
+		width: 800px;
+		border-radius: 2em;
+	}
+}
+
+.selection {
+	@media (max-width: 800px) {
+		margin-top: 1em;
+	}
+	@media (min-width: 800px) {
+		width: 340px;
+	}
+	&__bill {
+		&__title {
+			@include titles;
+		}
+		&__amount {
+			@include amount;
+			background-image: url(../img/icon-dollar.svg);
+		}
+	}
+
+	&__tip {
+		margin: .8em 0;
+		&__title {
+			@include titles;
+		}
+		&__list {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: .5em;
+
+			&__regular,
+			&__selected,
+			&__custom {
+				@include button;
+			}
+
+			&__regular {
+				background: $very-dark-cyan;
+  				color: $white;
+			}
+
+			&__selected {
+				background: $strong-cyan;
+  				color: $very-dark-cyan;
+			}
+			&__custom {
+				background: $light-grayish-cyan;
+				color: $dark-grayish-cyan;
+				text-align: center;
+				height: 100%;
+				@media (min-width: 800px) {
+					text-align: right;
+					padding-right: .5em;
+				}
+			}
+		}
+	}
+
+	&__people {
+		margin: .8em 0;
+		&__top {
+			@include flex-row-space;
+
+			&__title {
+				@include titles;
+			}
+			&__warning {
+				@include titles;
+				color: orange;
+			}
+		}
+		
+		&__amount {
+			@include amount;
+			background-image: url(../img/icon-person.svg);
+		}
+	}
+}
+
+.display {
+	background: $very-dark-cyan;
+	border-radius: 1em;
+	padding: 1em;
+
+	@media (min-width: 800px) {
+		width: 340px;
+		display: grid;
+		grid-template-columns: repeat(1fr);
+		grid-template-rows: 1fr 1fr 1fr 1fr;
+	}
+
+	&__tip, 
+	&__total {
+		@include flex-row-space;
+		margin: .8em 0;
+		&__container {
+			&__title {
+				color: $white;
+				font-size: .6em;
+				font-weight: bold;
+			}
+			&__ratio {
+				color: $dark-gray-cyan;
+				font-size: .5em;
+				font-weight: bold;
+			}
+		}
+		&__value {
+			color: $strong-cyan;
+			font-weight: bold;
+			&::before {
+				content: '$'
+			}
+		}
+	}
+
+	&__reset {
+		@include button;
+		background: $strong-cyan;
+  		color: $very-dark-cyan;
+  		@media (min-width: 800px) {
+			margin: 1em 0;
+	  		grid-row-start: 4;
+	  		font-size: .7em;
+		}
+	}
+}

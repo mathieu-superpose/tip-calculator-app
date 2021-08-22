@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/img/favicon-32x32.png">
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="stylesheet" href="./src/styles/style.css" />
+</head>
+
+<body>
+    <header>
+        <img src="./src/img/logo.svg" alt="splitter logo">
+    </header>
+    <main>
+        <section class="selection">
+            <section class="selection__bill">
+                <p class="selection__bill__title">Bill</p>
+                <input class="selection__bill__amount" type="text" name="bill" onChange="calculate()">
+            </section>
+            <section class="selection__tip">
+                <p class="selection__tip__title">Select Tip %</p>
+                <ul class="selection__tip__list">
+                    <li>
+                        <button class="selection__tip__list__regular" data-btn="1" onClick="selectButton(1)">5%</button>
+                    </li>
+                    <li>
+                        <button class="selection__tip__list__regular" data-btn="2" onClick="selectButton(2)">10%</button>
+                    </li>
+                    <li>
+                        <button class="selection__tip__list__selected" data-btn="3" onClick="selectButton(3)">15%</button>
+                    </li>
+                    <li>
+                        <button class="selection__tip__list__regular" data-btn="4" onClick="selectButton(4)">25%</button>
+                    </li>
+                    <li>
+                        <button class="selection__tip__list__regular" data-btn="5" onClick="selectButton(5)">50%</button>
+                    </li>
+                    <li>
+                        <input class="selection__tip__list__custom" type="text" name="custom-button" onBlur="customButton()" placeholder="Custom">
+                    </li>
+                </ul>
+            </section>
+            <section class="selection__people">
+                <div class="selection__people__top">
+                    <p class="selection__people__top__title">Number of People</p>
+                    <p class="selection__people__top__warning">Can't be zero</p>
+                </div>
+                <input class="selection__people__amount" type="text" name="people" onChange="calculate()">
+            </section>
+        </section>
+        <section class="display">
+            <section class="display__tip">
+                <div class="display__tip__container">
+                    <p class="display__tip__container__title">Tip Amount</p>
+                    <p class="display__tip__container__ratio">/ person</p>
+                </div>
+                <p class="display__tip__value"></p>
+            </section>
+            <section class="display__total">
+                <div class="display__total__container">
+                    <p class="display__total__container__title">Total</p>
+                    <p class="display__total__container__ratio">/ person</p>
+                </div>
+                <p class="display__total__value"></p>
+            </section>
+            <button class="display__reset" onClick="reset()">RESET</button>
+        </section>
+    </main>
+</body>
+<script src="./src/js/script.js"></script>
+
+</html>

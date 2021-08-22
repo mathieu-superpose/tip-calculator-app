@@ -1,0 +1,45 @@
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flex-row-space {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin titles {
+  color: $dark-grayish-cyan;
+  font-weight: bold;
+  font-size: .6em;
+  margin: .4em 0;
+}
+
+@mixin amount {
+  width: 100%;
+  border: 2px solid $white;
+  border-radius: .2em;
+  padding: .3em .5em;
+  text-align: right;
+  font-size: .9em;
+  font-weight: bold;
+  color: $very-dark-cyan;
+  background: $light-grayish-cyan;
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+  &:focus {
+    outline-color: $strong-cyan;
+  }
+}
+
+@mixin button {
+  border: none;
+  border-radius: .2em;
+  width: 100%;
+  padding: .2em;
+  font-size: .9em;
+  font-weight: bold;
+}

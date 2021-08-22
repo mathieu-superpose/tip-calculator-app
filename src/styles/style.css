@@ -1,0 +1,231 @@
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none; }
+
+footer, header, nav, section, main {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0; }
+
+@font-face {
+  font-family: Space Mono;
+  src: local("Space Mono Regular"), url(../fonts/Space_Mono/SpaceMono-Regular.ttf);
+  font-weight: normal; }
+@font-face {
+  font-family: Space Mono;
+  src: local("Space Mono Italic"), url(../fonts/Space_Mono/SpaceMono-Italic.ttf);
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: Space Mono;
+  src: local("Space Mono Bold"), url(../fonts/Space_Mono/SpaceMono-Bold.ttf);
+  font-weight: bold; }
+@font-face {
+  font-family: Space Mono;
+  src: local("Space Mono Bold Italic"), url(../fonts/Space_Mono/SpaceMono-BoldItalic.ttf);
+  font-weight: bold;
+  font-style: italic; }
+body {
+  font-size: 24px; }
+
+body, button {
+  font-family: 'Space Mono', monospace; }
+
+body {
+  background: #c5e4e7;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+header {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+main {
+  min-height: 80vh;
+  width: min(100vw, 400px);
+  background: white;
+  position: relative;
+  bottom: 0;
+  padding: 1em;
+  border-radius: 2em 2em 0 0; }
+  @media (min-width: 800px) {
+    main {
+      position: static;
+      padding: 1.5em;
+      display: flex;
+      justify-content: space-between;
+      min-height: 50vh;
+      width: 800px;
+      border-radius: 2em; } }
+
+@media (max-width: 800px) {
+  .selection {
+    margin-top: 1em; } }
+@media (min-width: 800px) {
+  .selection {
+    width: 340px; } }
+.selection__bill__title {
+  color: #7f9c9f;
+  font-weight: bold;
+  font-size: .6em;
+  margin: .4em 0; }
+.selection__bill__amount {
+  width: 100%;
+  border: 2px solid white;
+  border-radius: .2em;
+  padding: .3em .5em;
+  text-align: right;
+  font-size: .9em;
+  font-weight: bold;
+  color: #00494d;
+  background: #f4fafa;
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+  background-image: url(../img/icon-dollar.svg); }
+  .selection__bill__amount:focus {
+    outline-color: #26c0ab; }
+.selection__tip {
+  margin: .8em 0; }
+  .selection__tip__title {
+    color: #7f9c9f;
+    font-weight: bold;
+    font-size: .6em;
+    margin: .4em 0; }
+  .selection__tip__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: .5em; }
+    .selection__tip__list__regular, .selection__tip__list__selected, .selection__tip__list__custom {
+      border: none;
+      border-radius: .2em;
+      width: 100%;
+      padding: .2em;
+      font-size: .9em;
+      font-weight: bold; }
+    .selection__tip__list__regular {
+      background: #00494d;
+      color: white; }
+    .selection__tip__list__selected {
+      background: #26c0ab;
+      color: #00494d; }
+    .selection__tip__list__custom {
+      background: #f4fafa;
+      color: #7f9c9f;
+      text-align: center;
+      height: 100%; }
+      @media (min-width: 800px) {
+        .selection__tip__list__custom {
+          text-align: right;
+          padding-right: .5em; } }
+.selection__people {
+  margin: .8em 0; }
+  .selection__people__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+    .selection__people__top__title {
+      color: #7f9c9f;
+      font-weight: bold;
+      font-size: .6em;
+      margin: .4em 0; }
+    .selection__people__top__warning {
+      color: #7f9c9f;
+      font-weight: bold;
+      font-size: .6em;
+      margin: .4em 0;
+      color: orange; }
+  .selection__people__amount {
+    width: 100%;
+    border: 2px solid white;
+    border-radius: .2em;
+    padding: .3em .5em;
+    text-align: right;
+    font-size: .9em;
+    font-weight: bold;
+    color: #00494d;
+    background: #f4fafa;
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+    background-image: url(../img/icon-person.svg); }
+    .selection__people__amount:focus {
+      outline-color: #26c0ab; }
+
+.display {
+  background: #00494d;
+  border-radius: 1em;
+  padding: 1em; }
+  @media (min-width: 800px) {
+    .display {
+      width: 340px;
+      display: grid;
+      grid-template-columns: repeat(1fr);
+      grid-template-rows: 1fr 1fr 1fr 1fr; } }
+  .display__tip, .display__total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: .8em 0; }
+    .display__tip__container__title, .display__total__container__title {
+      color: white;
+      font-size: .6em;
+      font-weight: bold; }
+    .display__tip__container__ratio, .display__total__container__ratio {
+      color: #5e7a7d;
+      font-size: .5em;
+      font-weight: bold; }
+    .display__tip__value, .display__total__value {
+      color: #26c0ab;
+      font-weight: bold; }
+      .display__tip__value::before, .display__total__value::before {
+        content: "$"; }
+  .display__reset {
+    border: none;
+    border-radius: .2em;
+    width: 100%;
+    padding: .2em;
+    font-size: .9em;
+    font-weight: bold;
+    background: #26c0ab;
+    color: #00494d; }
+    @media (min-width: 800px) {
+      .display__reset {
+        margin: 1em 0;
+        grid-row-start: 4;
+        font-size: .7em; } }
+
+/*# sourceMappingURL=style.css.map */
